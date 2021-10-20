@@ -22,7 +22,7 @@ const questions = [
     name: "description",
   },
   {
-    message: "Whar are the instructions for installing your project?",
+    message: "What are the instructions for installing your project?",
     name: "installation",
   },
   {
@@ -40,15 +40,24 @@ const questions = [
   {
     type: "list",
     message: "What license do you want to use for your project?",
+    choices: ["MIT","Apache","GNU","ISC License"],
     name: "license",
   },
 ];
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+  fs.writeFile(fileName, generateMarkdown.generateMarkdown(data));
+}
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+  inquirer.prompt(questions)
+  .then((answers) => {
+    console.log(answers);
+    // writeToFile("README.md", answers);
+  });
+}
 
 // Function call to initialize app
 init();
