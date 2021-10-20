@@ -40,7 +40,7 @@ const questions = [
   {
     type: "list",
     message: "What license do you want to use for your project?",
-    choices: ["MIT","GPL 3.0","GNU","Apache 2.0"],
+    choices: ["MIT", "GPL 3.0", "Apache 2.0", "MPL 2.0"],
     name: "license",
   },
 ];
@@ -57,7 +57,7 @@ function init() {
   inquirer.prompt(questions)
   .then((answers) => {
     console.log(answers);
-    writeToFile("README-example.md", answers);
+    writeToFile("./output/README-example.md", answers);
   });
 }
 
