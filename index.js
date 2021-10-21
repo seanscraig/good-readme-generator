@@ -30,6 +30,10 @@ const questions = [
     name: "usage",
   },
   {
+    message: "Who do you want to credit for working on your project?",
+    name: "credits",
+  },
+  {
     message: "What are the contribution guidelines for your project?",
     name: "contributing",
   },
@@ -40,7 +44,7 @@ const questions = [
   {
     type: "list",
     message: "What license do you want to use for your project?",
-    choices: ["MIT", "GPL 3.0", "Apache 2.0", "MPL 2.0"],
+    choices: ["MIT", "GPL 3.0", "Apache 2.0", "MPL 2.0", ""],
     name: "license",
   },
 ];
